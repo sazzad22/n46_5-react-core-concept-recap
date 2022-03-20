@@ -42,13 +42,19 @@ function Post(props) {
 
 //adding event listener
 function District(props) {
-  
+  let [power, setPower] = useState(1) //we will increase the power value by multiplying,thats why the initial value is 1.
+  const boostPower = () => {
+    power = power * 2;
+    setPower(power);
+  }
   
 
   return (
     <div>
       <h2>Name:{props.name}</h2>
-    <h5>Speciality:</h5>
+      <h5>Specialty:</h5>
+      <h5>Power:{power}</h5>
+      <button onClick={boostPower}>Boost Power</button>
     </div>
   )
 }
